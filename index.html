@@ -126,6 +126,8 @@ border-radius:12px;
 font-weight:bold;
 transition:0.3s;
 box-shadow:0 0 20px rgba(255,136,0,0.4);
+border:none;
+cursor:pointer;
 }
 
 .btn:hover{
@@ -197,16 +199,43 @@ color:#ffbb55;
 font-weight:bold;
 }
 
-/* STATUS */
+/* SERVER STATUS */
 
-.status{
-display:inline-block;
-padding:10px 18px;
-background:#1f3;
-color:black;
-border-radius:30px;
-font-weight:bold;
-margin-top:10px;
+.status-box{
+margin-top:40px;
+background:#1a1a1a;
+padding:35px;
+border-radius:20px;
+border:2px solid #ff8800;
+box-shadow:0 0 25px rgba(255,136,0,0.2);
+}
+
+.status-title{
+color:#ff8800;
+margin-bottom:25px;
+font-size:30px;
+text-align:center;
+}
+
+#bedrock-status-1780039397922-5681{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+#bedrock-status-1780039397922-5681 p{
+background:#111;
+padding:16px;
+border-radius:12px;
+font-size:18px;
+border-left:5px solid #ff8800;
+color:#ddd;
+transition:0.3s;
+}
+
+#bedrock-status-1780039397922-5681 p:hover{
+transform:translateX(5px);
+background:#1f1f1f;
 }
 
 /* FOOTER */
@@ -264,8 +293,6 @@ justify-content:center;
 
 <body>
 
-<!-- NAVBAR -->
-
 <nav>
 
 <div class="logo">
@@ -283,8 +310,6 @@ SUSIS MC
 </button>
 
 </nav>
-
-<!-- HERO -->
 
 <header>
 
@@ -304,8 +329,6 @@ JOIN SERVER
 </div>
 
 </header>
-
-<!-- FEATURES -->
 
 <section id="features">
 
@@ -347,8 +370,6 @@ Professional anti-cheat protection.
 
 </section>
 
-<!-- SERVER -->
-
 <section id="server">
 
 <h2 class="title" id="serverTitle">
@@ -363,21 +384,47 @@ SERVER INFO
 play.susismc.ir
 </div>
 
-<div class="status" id="statusText">
-🟢 SERVER ONLINE
-</div>
-
-<br>
-
 <button class="btn" onclick="copyIP()" id="copyBtn">
 COPY IP
 </button>
 
+<!-- SERVER STATUS -->
+
+<div class="status-box">
+
+<h2 class="status-title">
+LIVE SERVER STATUS
+</h2>
+
+<div id="bedrock-status-1780039397922-5681">
+
+<p id="bedrock-status-1780039397922-5681-server-name">
+Loading...
+</p>
+
+<p id="bedrock-status-1780039397922-5681-players">
+Loading...
+</p>
+
+<p id="bedrock-status-1780039397922-5681-version">
+Loading...
+</p>
+
+<p id="bedrock-status-1780039397922-5681-latency">
+Loading...
+</p>
+
+<p id="bedrock-status-1780039397922-5681-status">
+Loading...
+</p>
+
+</div>
+
+</div>
+
 </div>
 
 </section>
-
-<!-- SUPPORT -->
 
 <section id="support">
 
@@ -411,8 +458,6 @@ Our staff team is always ready to help.
 
 <script>
 
-let currentLang = "en";
-
 /* COPY IP */
 
 function copyIP(){
@@ -421,15 +466,13 @@ let ip = document.getElementById("ip").innerText;
 
 navigator.clipboard.writeText(ip);
 
-if(currentLang === "en"){
 alert("IP Copied: " + ip);
-}else{
-alert("آی پی کپی شد: " + ip);
-}
 
 }
 
 /* LANGUAGE */
+
+let currentLang = "en";
 
 function toggleLanguage(){
 
@@ -437,7 +480,6 @@ if(currentLang === "en"){
 
 currentLang = "fa";
 
-document.documentElement.lang = "fa";
 document.body.style.direction = "rtl";
 
 document.getElementById("nav1").innerText = "ویژگی ها";
@@ -447,57 +489,128 @@ document.getElementById("nav3").innerText = "پشتیبانی";
 document.getElementById("heroText").innerHTML =
 "سرور حرفه ای ماینکرفت<br>برای بازیکنان جاوا و بدراک";
 
-document.getElementById("joinBtn").innerText = "ورود به سرور";
+document.getElementById("joinBtn").innerText =
+"ورود به سرور";
 
-document.getElementById("featuresTitle").innerText = "ویژگی های سرور";
+document.getElementById("featuresTitle").innerText =
+"ویژگی های سرور";
 
-document.getElementById("card1Title").innerText = "جاوا و بدراک";
+document.getElementById("card1Title").innerText =
+"جاوا و بدراک";
+
 document.getElementById("card1Text").innerText =
 "از موبایل، کامپیوتر و کنسول بازی کن.";
 
-document.getElementById("card2Title").innerText = "پینگ عالی";
+document.getElementById("card2Title").innerText =
+"پینگ عالی";
+
 document.getElementById("card2Text").innerText =
 "سرعت بالا و گیم پلی روان.";
 
-document.getElementById("card3Title").innerText = "سیستم حرفه ای";
+document.getElementById("card3Title").innerText =
+"سیستم حرفه ای";
+
 document.getElementById("card3Text").innerText =
 "رنک، اقتصاد، PvP و ایونت.";
 
-document.getElementById("card4Title").innerText = "امنیت بالا";
+document.getElementById("card4Title").innerText =
+"امنیت بالا";
+
 document.getElementById("card4Text").innerText =
 "محافظت حرفه ای ضد چیت.";
 
-document.getElementById("serverTitle").innerText = "اطلاعات سرور";
+document.getElementById("serverTitle").innerText =
+"اطلاعات سرور";
 
-document.getElementById("ipTitle").innerText = "آی پی سرور";
+document.getElementById("ipTitle").innerText =
+"آی پی سرور";
 
-document.getElementById("copyBtn").innerText = "کپی آی پی";
+document.getElementById("copyBtn").innerText =
+"کپی آی پی";
 
-document.getElementById("supportTitle").innerText = "پشتیبانی";
-
-document.getElementById("discordTitle").innerText = "دیسکورد";
-document.getElementById("discordText").innerText =
-"به کامیونیتی سرور بپیوند.";
-
-document.getElementById("staffTitle").innerText = "مدیریت فعال";
-document.getElementById("staffText").innerText =
-"تیم مدیریت همیشه آماده کمک است.";
-
-document.getElementById("statusText").innerText =
-"🟢 سرور آنلاین";
+document.getElementById("supportTitle").innerText =
+"پشتیبانی";
 
 }else{
-
-currentLang = "en";
-
-document.documentElement.lang = "en";
-document.body.style.direction = "ltr";
 
 location.reload();
 
 }
 
 }
+
+/* SERVER STATUS API */
+
+(function() {
+
+const container =
+document.getElementById('bedrock-status-1780039397922-5681');
+
+if(!container) return;
+
+const url =
+'https://bedrockhub.ir/requirements/functions/server_status_api.php?ip=play.susismc.ir&port=27404';
+
+function update() {
+
+fetch(url)
+
+.then(r => r.json())
+
+.then(d => {
+
+if(d.online) {
+
+document.getElementById(
+'bedrock-status-1780039397922-5681-server-name'
+).textContent =
+'Server: ' + (d.motd || 'play.susismc.ir');
+
+document.getElementById(
+'bedrock-status-1780039397922-5681-players'
+).textContent =
+'Players: ' + d.players + ' / ' + d.max_players;
+
+document.getElementById(
+'bedrock-status-1780039397922-5681-version'
+).textContent =
+'Version: ' + (d.version || 'Unknown');
+
+document.getElementById(
+'bedrock-status-1780039397922-5681-latency'
+).textContent =
+'Ping: ' + d.latency + ' ms';
+
+document.getElementById(
+'bedrock-status-1780039397922-5681-status'
+).textContent =
+'Status: ONLINE 🟢';
+
+} else {
+
+document.getElementById(
+'bedrock-status-1780039397922-5681-status'
+).textContent =
+'Status: OFFLINE 🔴';
+
+}
+
+})
+
+.catch(() => {
+
+container.innerHTML =
+'<p>API Connection Error</p>';
+
+});
+
+}
+
+update();
+
+setInterval(update, 60000);
+
+})();
 
 </script>
 
