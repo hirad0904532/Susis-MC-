@@ -106,7 +106,6 @@ animation:fadeUp 1s ease;
 font-size:90px;
 color:#ff8800;
 text-shadow:0 0 30px #ff8800;
-word-break:break-word;
 }
 
 .hero p{
@@ -118,7 +117,7 @@ color:#ddd;
 
 .btn{
 display:inline-block;
-margin-top:35px;
+margin-top:25px;
 padding:16px 40px;
 background:#ff8800;
 color:white;
@@ -182,7 +181,7 @@ color:#ccc;
 line-height:1.8;
 }
 
-/* SERVER BOX */
+/* SERVER */
 
 .server-box{
 background:#1a1a1a;
@@ -198,7 +197,6 @@ font-size:32px;
 margin:20px 0;
 color:#ffbb55;
 font-weight:bold;
-word-break:break-word;
 }
 
 /* STATUS */
@@ -232,13 +230,33 @@ border-radius:12px;
 font-size:18px;
 border-left:5px solid #ff8800;
 color:#ddd;
-transition:0.3s;
-word-break:break-word;
 }
 
-#bedrock-status-1780039397922-5681 p:hover{
-transform:translateX(5px);
-background:#1f1f1f;
+/* FORM */
+
+form{
+display:flex;
+flex-direction:column;
+gap:20px;
+max-width:500px;
+margin:auto;
+}
+
+form input{
+padding:16px;
+border:none;
+border-radius:12px;
+background:#111;
+color:white;
+font-size:16px;
+outline:none;
+border:2px solid transparent;
+transition:0.3s;
+}
+
+form input:focus{
+border-color:#ff8800;
+box-shadow:0 0 15px rgba(255,136,0,0.4);
 }
 
 /* FOOTER */
@@ -269,18 +287,6 @@ transform:translateY(0);
 
 /* RESPONSIVE */
 
-@media(max-width:900px){
-
-.hero h1{
-font-size:70px;
-}
-
-.hero p{
-font-size:20px;
-}
-
-}
-
 @media(max-width:768px){
 
 nav{
@@ -294,7 +300,7 @@ justify-content:center;
 }
 
 .hero h1{
-font-size:50px;
+font-size:52px;
 }
 
 .hero p{
@@ -307,35 +313,6 @@ font-size:32px;
 
 .ip{
 font-size:24px;
-}
-
-.card{
-padding:25px;
-}
-
-.server-box{
-padding:30px 20px;
-}
-
-.status-box{
-padding:25px 18px;
-}
-
-}
-
-@media(max-width:480px){
-
-.hero h1{
-font-size:40px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.btn{
-width:100%;
-max-width:300px;
 }
 
 }
@@ -356,6 +333,8 @@ SUSIS MC
 <ul>
 <li><a href="#features" id="nav1">Features</a></li>
 <li><a href="#server" id="nav2">Server</a></li>
+<li><a href="#shop">Shop</a></li>
+<li><a href="#account">Account</a></li>
 <li><a href="#support" id="nav3">Support</a></li>
 </ul>
 
@@ -390,36 +369,36 @@ JOIN SERVER
 
 <section id="features">
 
-<h2 class="title" id="featuresTitle">
+<h2 class="title">
 SERVER FEATURES
 </h2>
 
 <div class="cards">
 
 <div class="card">
-<h3 id="card1Title">JAVA & BEDROCK</h3>
-<p id="card1Text">
+<h3>JAVA & BEDROCK</h3>
+<p>
 Play from PC, Mobile and Console.
 </p>
 </div>
 
 <div class="card">
-<h3 id="card2Title">LOW PING</h3>
-<p id="card2Text">
+<h3>LOW PING</h3>
+<p>
 Fast and smooth gameplay experience.
 </p>
 </div>
 
 <div class="card">
-<h3 id="card3Title">CUSTOM SYSTEMS</h3>
-<p id="card3Text">
+<h3>CUSTOM SYSTEMS</h3>
+<p>
 Ranks, Economy, PvP and Events.
 </p>
 </div>
 
 <div class="card">
-<h3 id="card4Title">ADVANCED SECURITY</h3>
-<p id="card4Text">
+<h3>ADVANCED SECURITY</h3>
+<p>
 Professional anti-cheat protection.
 </p>
 </div>
@@ -432,23 +411,21 @@ Professional anti-cheat protection.
 
 <section id="server">
 
-<h2 class="title" id="serverTitle">
+<h2 class="title">
 SERVER INFO
 </h2>
 
 <div class="server-box">
 
-<h2 id="ipTitle">SERVER IP</h2>
+<h2>SERVER IP</h2>
 
 <div class="ip" id="ip">
 play.susismc.ir
 </div>
 
-<button class="btn" onclick="copyIP()" id="copyBtn">
+<button class="btn" onclick="copyIP()">
 COPY IP
 </button>
-
-<!-- STATUS -->
 
 <div class="status-box">
 
@@ -486,26 +463,116 @@ Loading...
 
 </section>
 
+<!-- SHOP -->
+
+<section id="shop">
+
+<h2 class="title">
+RANK SHOP
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>VIP RANK</h3>
+
+<p>
+Special abilities, kits and commands.
+</p>
+
+<a href="#" class="btn">
+BUY NOW
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>MVP RANK</h3>
+
+<p>
+Advanced permissions and exclusive rewards.
+</p>
+
+<a href="#" class="btn">
+BUY NOW
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>LEGEND RANK</h3>
+
+<p>
+Ultimate rank for professional players.
+</p>
+
+<a href="#" class="btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ACCOUNT -->
+
+<section id="account">
+
+<h2 class="title">
+CREATE ACCOUNT
+</h2>
+
+<div class="server-box">
+
+<form>
+
+<input type="text"
+placeholder="Username"
+required>
+
+<input type="email"
+placeholder="Email"
+required>
+
+<input type="password"
+placeholder="Password"
+required>
+
+<button type="submit" class="btn">
+CREATE ACCOUNT
+</button>
+
+</form>
+
+</div>
+
+</section>
+
 <!-- SUPPORT -->
 
 <section id="support">
 
-<h2 class="title" id="supportTitle">
+<h2 class="title">
 SUPPORT
 </h2>
 
 <div class="cards">
 
 <div class="card">
-<h3 id="discordTitle">DISCORD</h3>
-<p id="discordText">
+<h3>DISCORD</h3>
+<p>
 Join the community and play with others.
 </p>
 </div>
 
 <div class="card">
-<h3 id="staffTitle">ACTIVE STAFF</h3>
-<p id="staffText">
+<h3>ACTIVE STAFF</h3>
+<p>
 Our staff team is always ready to help.
 </p>
 </div>
@@ -528,11 +595,7 @@ let ip = document.getElementById("ip").innerText;
 
 navigator.clipboard.writeText(ip);
 
-if(currentLang === "en"){
 alert("IP Copied: " + ip);
-}else{
-alert("آی پی کپی شد: " + ip);
-}
 
 }
 
@@ -548,55 +611,6 @@ currentLang = "fa";
 
 document.body.style.direction = "rtl";
 
-document.getElementById("nav1").innerText = "ویژگی ها";
-document.getElementById("nav2").innerText = "سرور";
-document.getElementById("nav3").innerText = "پشتیبانی";
-
-document.getElementById("heroText").innerHTML =
-"سرور حرفه ای ماینکرفت<br>برای بازیکنان جاوا و بدراک";
-
-document.getElementById("joinBtn").innerText =
-"ورود به سرور";
-
-document.getElementById("featuresTitle").innerText =
-"ویژگی های سرور";
-
-document.getElementById("card1Title").innerText =
-"جاوا و بدراک";
-
-document.getElementById("card1Text").innerText =
-"از موبایل، کامپیوتر و کنسول بازی کن.";
-
-document.getElementById("card2Title").innerText =
-"پینگ عالی";
-
-document.getElementById("card2Text").innerText =
-"سرعت بالا و گیم پلی روان.";
-
-document.getElementById("card3Title").innerText =
-"سیستم حرفه ای";
-
-document.getElementById("card3Text").innerText =
-"رنک، اقتصاد، PvP و ایونت.";
-
-document.getElementById("card4Title").innerText =
-"امنیت بالا";
-
-document.getElementById("card4Text").innerText =
-"محافظت حرفه ای ضد چیت.";
-
-document.getElementById("serverTitle").innerText =
-"اطلاعات سرور";
-
-document.getElementById("ipTitle").innerText =
-"آی پی سرور";
-
-document.getElementById("copyBtn").innerText =
-"کپی آی پی";
-
-document.getElementById("supportTitle").innerText =
-"پشتیبانی";
-
 }else{
 
 location.reload();
@@ -605,7 +619,7 @@ location.reload();
 
 }
 
-/* SERVER STATUS API */
+/* SERVER STATUS */
 
 (function() {
 
